@@ -348,14 +348,15 @@
   display: flex;
 }
 
-    /* Намалена непрозрачност на българското знаме в навбара */
-.lang-flags a[href="index.html"] svg {
+/* Reduced opacity for EN flag (main on EN page) */
+.lang-flags a[href="index-en.html"] svg {
   opacity: 0.8;
   transition: opacity 0.2s ease;
 }
-.lang-flags a[href="index.html"]:hover svg {
+.lang-flags a[href="index-en.html"]:hover svg {
   opacity: 1;
 }
+
 /* Заоблени и леко замъглени ръбове на снимките с бутилки */
 .product-detail img {
   border-radius: 14px;
@@ -743,25 +744,27 @@ document.addEventListener("scroll", () => {
 });
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const bgFlag = document.querySelector('.lang-flags a[href="index.html"]');
-  const ruFlag = document.querySelector('.lang-flags a[href="index-ru.html"]');
-  const enFlag = document.querySelector('.lang-flags a[href="index-en.html"]');
+  document.addEventListener("DOMContentLoaded", () => {
+    const enFlag = document.querySelector('.lang-flags a[href="index-en.html"]');
+    const ruFlag = document.querySelector('.lang-flags a[href="index-ru.html"]');
+    const bgFlag = document.querySelector('.lang-flags a[href="index.html"]');
 
-  // създаваме drawer и местим другите флагове в него
-  const drawer = document.createElement('div');
-  drawer.className = 'lang-drawer';
-  drawer.appendChild(enFlag);
-  drawer.appendChild(ruFlag);
-  bgFlag.parentElement.appendChild(drawer);
+    if (!enFlag || !ruFlag || !bgFlag) return;
 
-  // при клик на българското знаме отваряме/затваряме drawer-а
-  bgFlag.addEventListener('click', e => {
-    e.preventDefault();
-    drawer.classList.toggle('show');
+    const drawer = document.createElement('div');
+    drawer.className = 'lang-drawer';
+    drawer.appendChild(bgFlag);
+    drawer.appendChild(ruFlag);
+
+    enFlag.parentElement.appendChild(drawer);
+
+    enFlag.addEventListener('click', (e) => {
+      e.preventDefault();
+      drawer.classList.toggle('show');
+    });
   });
-});
 </script>
+
 
   <script>
 /* ДЕАКТИВИРАМЕ СЛАЙДЕРА И АВТОПЛЕЯ */
