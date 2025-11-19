@@ -686,5 +686,33 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
+  <script>
+/* ДЕАКТИВИРАМЕ СЛАЙДЕРА И АВТОПЛЕЯ */
+document.addEventListener("DOMContentLoaded", () => {
+  const slides = document.querySelector(".slides");
+
+  /* Нулираме всякакво местене */
+  if (slides) {
+    slides.style.transform = "translateX(0)";
+    slides.style.transition = "none";
+  }
+
+  /* Спираме автоплей интервала, ако е създаден */
+  if (typeof auto !== "undefined") {
+    clearInterval(auto);
+  }
+
+  /* Деактивираме бутоните завинаги */
+  const prev = document.querySelector(".prev");
+  const next = document.querySelector(".next");
+  if (prev) prev.style.display = "none";
+  if (next) next.style.display = "none";
+
+  /* Скриваме точките */
+  const dots = document.querySelector(".dots");
+  if (dots) dots.style.display = "none";
+});
+</script>
+
 </body>
 </html>
