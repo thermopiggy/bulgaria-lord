@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -74,618 +74,614 @@
     .contacts-icons a.facebook:hover svg{fill:#1877f2}
     .contacts-icons a.youtube:hover svg{fill:#ff0000}
     @media(max-width:768px){
-  .nav-links{
-    display:none;
-    position:absolute;
-    top:100%;
-    right:0;
-    width:220px;
-    background:var(--nav-bg); /* същата прозрачност като nav */
-    flex-direction:column;
-    padding:10px;
-  }
-  .nav-links.show{display:flex;}
-  .hamburger{display:flex;}
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:100%;
+        right:0;
+        width:220px;
+        background:var(--nav-bg);
+        flex-direction:column;
+        padding:10px;
+      }
+      .nav-links.show{display:flex;}
+      .hamburger{display:flex;}
 
-  .lang-flags{
-    margin-top:10px;
-    flex-direction:column; /* вертикално подреждане */
-    gap:12px;
-    align-items:flex-start;
-  }
-}
-.contacts-icons a.instagram:hover svg{fill:#E1306C}
-#about {
-  position: relative;
-  min-height: 100vh;
-  overflow: hidden;
-}
-.product-detail {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-  max-width: 1000px;
-  margin: 80px auto;
-  padding: 20px;
-}
-.product-detail img {
-  max-width: 300px;
-  width: 100%;
-}
-.product-detail .desc {
-  max-width: 500px;
-  text-align: left;
-}
-@media(max-width:768px){
-  .product-detail {
-    flex-direction: column;
-    text-align: center;
-  }
-}
+      .lang-flags{
+        margin-top:10px;
+        flex-direction:column;
+        gap:12px;
+        align-items:flex-start;
+      }
+    }
+    .contacts-icons a.instagram:hover svg{fill:#E1306C}
+    #about {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    .product-detail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      max-width: 1000px;
+      margin: 80px auto;
+      padding: 20px;
+    }
+    .product-detail img {
+      max-width: 300px;
+      width: 100%;
+    }
+    .product-detail .desc {
+      max-width: 500px;
+      text-align: left;
+    }
+    @media(max-width:768px){
+      .product-detail {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
 
-.product-detail.reverse {
-  flex-direction: row-reverse;
-}
-/* Drawer: подравняване вдясно на мобилно */
-@media (max-width: 768px){
-  .nav .nav-links{
-    align-items: flex-end !important;   /* колона вдясно */
-    text-align: right !important;
-  }
-  .nav .nav-links a{
-    align-self: flex-end !important;    /* всеки линк вдясно */
-    text-align: right !important;
-  }
-  /* флаговете – спрели са в центъра от предно правило */
-  .nav .lang-flags{
-    justify-content: flex-end !important;
-    align-self: flex-end !important;
-    margin-top: 10px; /* запазваме отстъпа */
-  }
-}
-/* AGE GATE */
-#age-gate {
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.85);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity .25s ease;
-}
-#age-gate.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-#age-gate .age-card {
-  width: min(92vw, 460px);
-  padding: 28px 22px;
-  text-align: center;
-  background: #111;
-  border-radius: 12px;
-  box-shadow: 0 12px 40px rgba(0, 0, 0, .5);
-}
-#age-gate .age-badge {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 14px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  font: 700 34px/1 system-ui, Segoe UI, Roboto, Arial;
-  background: #c5161a;
-  color: #fff;
-}
-#age-gate p {
-  margin: 6px 0 20px;
-  font-weight: 600;
-  font-size: 18px;
-}
-.age-actions {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.age-btn {
-  cursor: pointer;
-  border: 0;
-  padding: 12px 26px;
-  font-weight: 800;
-  border-radius: 8px;
-  font-size: 16px;
-}
-.age-btn.yes {
-  background: #4caf11;
-  color: #fff;
-}
-.age-btn.no {
-  background: #b71c1c;
-  color: #fff;
-}
-.age-btn:hover {
-  opacity: .9;
-}
-@media (max-width: 480px) {
-  #age-gate .age-card { padding: 22px 16px; }
-  .age-btn { flex: 1; }
-}
-/* FIX: на мобилно текстът да е под бутилката */
-@media (max-width:768px){
-  .product-detail,
-  .product-detail.reverse{
-    flex-direction: column !important;   /* override на row-reverse по-горе */
-    text-align: center;
-  }
-  .product-detail .desc{ max-width: 620px; }
-}
-/* Стесняване на мобилния drawer до 110px и подравняване вдясно */
-@media (max-width:768px){
-  .nav-links{
-    width:95px !important;
-    right:0;
-    background:rgba(0,0,0,0.25);
-    flex-direction:column;
-    align-items:flex-end;
-    padding:10px 6px;
-  }
-  .nav-links a{
-    font-size:14px;
-    padding:6px 0;
-    margin-left:8px;  /* малък ляв маргин от ръба */
-    text-align:right;
-  }
-  .lang-flags{
-    flex-direction:column;
-    align-items:flex-end;
-    margin-left:8px;
-    gap:10px;
-  }
-  .lang-flags svg{
-    width:24px;
-    height:16px;
-  }
-}
+    .product-detail.reverse {
+      flex-direction: row-reverse;
+    }
+    /* Drawer: подравняване вдясно на мобилно */
+    @media (max-width: 768px){
+      .nav .nav-links{
+        align-items: flex-end !important;
+        text-align: right !important;
+      }
+      .nav .nav-links a{
+        align-self: flex-end !important;
+        text-align: right !important;
+      }
+      .nav .lang-flags{
+        justify-content: flex-end !important;
+        align-self: flex-end !important;
+        margin-top: 10px;
+      }
+    }
+    /* AGE GATE */
+    #age-gate {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.85);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .25s ease;
+    }
+    #age-gate.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    #age-gate .age-card {
+      width: min(92vw, 460px);
+      padding: 28px 22px;
+      text-align: center;
+      background: #111;
+      border-radius: 12px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .5);
+    }
+    #age-gate .age-badge {
+      width: 96px;
+      height: 96px;
+      margin: 0 auto 14px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font: 700 34px/1 system-ui, Segoe UI, Roboto, Arial;
+      background: #c5161a;
+      color: #fff;
+    }
+    #age-gate p {
+      margin: 6px 0 20px;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    .age-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .age-btn {
+      cursor: pointer;
+      border: 0;
+      padding: 12px 26px;
+      font-weight: 800;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+    .age-btn.yes {
+      background: #4caf11;
+      color: #fff;
+    }
+    .age-btn.no {
+      background: #b71c1c;
+      color: #fff;
+    }
+    .age-btn:hover {
+      opacity: .9;
+    }
+    @media (max-width: 480px) {
+      #age-gate .age-card { padding: 22px 16px; }
+      .age-btn { flex: 1; }
+    }
+    /* FIX: mobile – text under bottle */
+    @media (max-width:768px){
+      .product-detail,
+      .product-detail.reverse{
+        flex-direction: column !important;
+        text-align: center;
+      }
+      .product-detail .desc{ max-width: 620px; }
+    }
+    /* Narrow mobile drawer */
+    @media (max-width:768px){
+      .nav-links{
+        width:95px !important;
+        right:0;
+        background:rgba(0,0,0,0.25);
+        flex-direction:column;
+        align-items:flex-end;
+        padding:10px 6px;
+      }
+      .nav-links a{
+        font-size:14px;
+        padding:6px 0;
+        margin-left:8px;
+        text-align:right;
+      }
+      .lang-flags{
+        flex-direction:column;
+        align-items:flex-end;
+        margin-left:8px;
+        gap:10px;
+      }
+      .lang-flags svg{
+        width:24px;
+        height:16px;
+      }
+    }
 
-#about {
-  background: #333;
-  color: #fff;
-  padding: 80px 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-}
+    #about {
+      background: #333;
+      color: #fff;
+      padding: 80px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
 
-.about-block {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  max-width: 1100px;
-  margin: 0 auto;
-}
+    .about-block {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-.about-block.reverse {
-  flex-direction: row-reverse;
-}
+    .about-block.reverse {
+      flex-direction: row-reverse;
+    }
 
-.about-img {
-  width: 360px;
-  max-width: 45%;
-  border-radius: 8px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
-}
+    .about-img {
+      width: 360px;
+      max-width: 45%;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+    }
 
-.about-text {
-  flex: 1;
-  max-width: 480px;
-  font-size: 16px;
-  line-height: 1.6;
-}
+    .about-text {
+      flex: 1;
+      max-width: 480px;
+      font-size: 16px;
+      line-height: 1.6;
+    }
 
-.about-text h2 {
-  margin-bottom: 12px;
-  font-size: 28px;
-}
+    .about-text h2 {
+      margin-bottom: 12px;
+      font-size: 28px;
+    }
 
-@media (max-width: 768px) {
-  .about-block, .about-block.reverse {
-    flex-direction: column;
-    text-align: center;
-  }
-  .about-img {
-    max-width: 90%;
-  }
-}
-.about-img {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 1.8s ease, transform 1.8s ease;
-}
+    @media (max-width: 768px) {
+      .about-block, .about-block.reverse {
+        flex-direction: column;
+        text-align: center;
+      }
+      .about-img {
+        max-width: 90%;
+      }
+    }
+    .about-img {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 1.8s ease, transform 1.8s ease;
+    }
 
-.about-img.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-/* Сенчест ореол и opacity 0.9 за голямото лого */
-.hero .headline img {
-  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.7));
-  opacity: 0.8;
-}
+    .about-img.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Shadow and opacity for hero logo */
+    .hero .headline img {
+      filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.7));
+      opacity: 0.8;
+    }
 
-    /* Бутоните в нав бара в цвета на логото */
-.nav a {
-  color: #d4a017 !important; /* златисто-кехлибарен като логото */
-}
+    /* Nav buttons in logo color */
+    .nav a {
+      color: #d4a017 !important;
+    }
 
-.nav a:hover {
-  background: rgba(212, 160, 23, 0.2);
-  color: #ffd76a !important;
-}
+    .nav a:hover {
+      background: rgba(212, 160, 23, 0.2);
+      color: #ffd76a !important;
+    }
 
-/* Езиков drawer */
-.lang-flags {
-  position: relative;
-}
-.lang-drawer {
-  position: absolute;
-  top: 40px;
-  right: 0;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 6px;
-  padding: 10px;
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 100;
-}
-.lang-drawer.show {
-  display: flex;
-}
+    /* Language drawer */
+    .lang-flags {
+      position: relative;
+    }
+    .lang-drawer {
+      position: absolute;
+      top: 40px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      padding: 10px;
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 100;
+    }
+    .lang-drawer.show {
+      display: flex;
+    }
 
-    /* Намалена непрозрачност на българското знаме в навбара */
-.lang-flags a[href="index.html"] svg {
-  opacity: 0.8;
-  transition: opacity 0.2s ease;
-}
-.lang-flags a[href="index.html"]:hover svg {
-  opacity: 1;
-}
-/* Заоблени и леко замъглени ръбове на снимките с бутилки */
-.product-detail img {
-  border-radius: 14px;
-}
+    /* Reduced opacity for BG flag (main) */
+    .lang-flags a[href="index.html"] svg {
+      opacity: 0.8;
+      transition: opacity 0.2s ease;
+    }
+    .lang-flags a[href="index.html"]:hover svg {
+      opacity: 1;
+    }
 
-    /* СКРИВА всички, освен втория продукт в слайдера */
-#products .product-item:not(:nth-child(2)) {
-    display: none !important;
-}
+    /* Rounded bottle images */
+    .product-detail img {
+      border-radius: 14px;
+    }
 
-/* СКРИВА всички detail секции, освен detail2 */
-.product-detail:not(#detail2) {
-    display: none !important;
-}
+    /* Hide all but 2nd product in slider */
+    #products .product-item:not(:nth-child(2)) {
+      display: none !important;
+    }
 
-/* СКРИВА стрелките и точките */
-.slider .prev,
-.slider .next,
-.dots {
-    display: none !important;
-}
+    /* Hide all detail blocks except detail2 */
+    .product-detail:not(#detail2) {
+      display: none !important;
+    }
+
+    /* Hide slider arrows and dots */
+    .slider .prev,
+    .slider .next,
+    .dots {
+      display: none !important;
+    }
 
     .contacts-icons a.whatsapp:hover svg {
-  fill: #25D366;
-}
+      fill: #25D366;
+    }
 
-.contacts-icons a.viber:hover svg {
-  fill: #7360F2;
-}
+    .contacts-icons a.viber:hover svg {
+      fill: #7360F2;
+    }
 
-/* Нормално състояние – 25% от истинската наситеност */
-.contacts-icons a.facebook svg {
-    fill: #1877F2;
-    filter: saturate(0.25);
-}
+    /* Normal state – 25% saturation */
+    .contacts-icons a.facebook svg {
+      fill: #1877F2;
+      filter: saturate(0.25);
+    }
 
-.contacts-icons a.youtube svg {
-    fill: #FF0000;
-    filter: saturate(0.25);
-}
+    .contacts-icons a.youtube svg {
+      fill: #FF0000;
+      filter: saturate(0.25);
+    }
 
-.contacts-icons a.instagram svg {
-    fill: #E1306C;
-    filter: saturate(0.25);
-}
+    .contacts-icons a.instagram svg {
+      fill: #E1306C;
+      filter: saturate(0.25);
+    }
 
-.contacts-icons a.whatsapp svg {
-    fill: #25D366;
-    filter: saturate(0.25);
-}
+    .contacts-icons a.whatsapp svg {
+      fill: #25D366;
+      filter: saturate(0.25);
+    }
 
-.contacts-icons a.viber svg {
-    fill: #7360F2;
-    filter: saturate(0.25);
-}
+    .contacts-icons a.viber svg {
+      fill: #7360F2;
+      filter: saturate(0.25);
+    }
 
-/* Пълен цвят при hover */
-.contacts-icons a:hover svg {
-    filter: saturate(1);
-}
+    /* Full color on hover */
+    .contacts-icons a:hover svg {
+      filter: saturate(1);
+    }
 
-.webbadoo-credit {
-  text-align: left;
-  padding: 20px;
-  font-size: 15px;
-  color: #bbb;
-}
+    .webbadoo-credit {
+      text-align: left;
+      padding: 20px;
+      font-size: 15px;
+      color: #bbb;
+    }
 
-.webbadoo-credit a {
-  color: #d4a017; /* златисто като менюто */
-  text-decoration: none;
-}
+    .webbadoo-credit a {
+      color: #d4a017;
+      text-decoration: none;
+    }
 
-.webbadoo-credit a:hover {
-  color: #ffd76a;
-}
+    .webbadoo-credit a:hover {
+      color: #ffd76a;
+    }
 
-#contacts {
-    margin-bottom: 20px !important;
-    padding-bottom: 20px !important;
-}
+    #contacts {
+      margin-bottom: 20px !important;
+      padding-bottom: 20px !important;
+    }
   </style>
 </head>
 <body>
   <!-- Age Gate -->
-<div id="age-gate" aria-modal="true" role="dialog">
-  <div class="age-card">
-    <div class="age-badge">18</div>
-    <p>Вам уже исполнилось 18 лет?</p>
-    <div class="age-actions">
-      <button id="age-yes" class="age-btn yes">ДА</button>
-      <button id="age-no" class="age-btn no">НЕТ</button>
+  <div id="age-gate" aria-modal="true" role="dialog">
+    <div class="age-card">
+      <div class="age-badge">18</div>
+      <p>Are you over 18 years old?</p>
+      <div class="age-actions">
+        <button id="age-yes" class="age-btn yes">YES</button>
+        <button id="age-no" class="age-btn no">NO</button>
+      </div>
     </div>
   </div>
-</div>
 
   <nav class="nav">
-   <a href="index-ru.html"><img src="lod.png" alt="Логотип Lord of the Drinks" class="logo"></a>
+    <a href="index-en.html"><img src="lod.png" alt="Lord of the Drinks logo" class="logo"></a>
 
     <div class="hamburger" onclick="document.querySelector('.nav-links').classList.toggle('show')">
       <span></span><span></span><span></span>
     </div>
 
     <div class="nav-links">
-      <a href="#products">ПРОДУКЦИЯ</a>
-      <a href="#contacts">КОНТАКТЫ</a>
-      <a href="#about">О НАС</a>
+      <a href="#products">PRODUCTS</a>
+      <a href="#contacts">CONTACTS</a>
+      <a href="#about">ABOUT US</a>
 
-   <div class="lang-flags">
-  <!-- EN -->
-  <a href="index-en.html" aria-label="English">
-    <svg viewBox="0 0 60 30" width="28" height="18" aria-hidden="true">
-      <defs><clipPath id="clip-uk"><rect width="60" height="30"></rect></clipPath></defs>
-      <g clip-path="url(#clip-uk)" shape-rendering="crispEdges">
-        <rect width="60" height="30" fill="#012169"/>
-        <path d="M0 0L60 30M60 0L0 30" stroke="#FFFFFF" stroke-width="6" stroke-linecap="square"/>
-        <path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" stroke-width="4" stroke-linecap="square"/>
-        <path d="M30 0V30M0 15H60" stroke="#FFFFFF" stroke-width="10" stroke-linecap="square"/>
-        <path d="M30 0V30M0 15H60" stroke="#C8102E" stroke-width="6" stroke-linecap="square"/>
-      </g>
-    </svg>
-  </a>
+      <div class="lang-flags">
+        <!-- EN -->
+        <a href="index-en.html" aria-label="English">
+          <svg viewBox="0 0 60 30" width="28" height="18" aria-hidden="true">
+            <defs><clipPath id="clip-uk"><rect width="60" height="30"></rect></clipPath></defs>
+            <g clip-path="url(#clip-uk)" shape-rendering="crispEdges">
+              <rect width="60" height="30" fill="#012169"/>
+              <path d="M0 0L60 30M60 0L0 30" stroke="#FFFFFF" stroke-width="6" stroke-linecap="square"/>
+              <path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" stroke-width="4" stroke-linecap="square"/>
+              <path d="M30 0V30M0 15H60" stroke="#FFFFFF" stroke-width="10" stroke-linecap="square"/>
+              <path d="M30 0V30M0 15H60" stroke="#C8102E" stroke-width="6" stroke-linecap="square"/>
+            </g>
+          </svg>
+        </a>
 
-  <!-- RU -->
-  <a href="index-ru.html" aria-label="Русский">
-    <svg viewBox="0 0 3 2" width="28" height="18" aria-hidden="true">
-      <rect width="3" height="2" fill="#fff"/>
-      <rect y="0.6667" width="3" height="0.6667" fill="#0039A6"/>
-      <rect y="1.3333" width="3" height="0.6667" fill="#D52B1E"/>
-    </svg>
-  </a>
+        <!-- RU -->
+        <a href="index-ru.html" aria-label="Русский">
+          <svg viewBox="0 0 3 2" width="28" height="18" aria-hidden="true">
+            <rect width="3" height="2" fill="#fff"/>
+            <rect y="0.6667" width="3" height="0.6667" fill="#0039A6"/>
+            <rect y="1.3333" width="3" height="0.6667" fill="#D52B1E"/>
+          </svg>
+        </a>
 
-  <!-- BG -->
-  <a href="index.html" aria-label="Български">
-    <svg viewBox="0 0 9 6" width="28" height="18" aria-hidden="true">
-      <rect width="9" height="6" fill="#D62612"/>
-      <rect width="9" height="4" fill="#00966E"/>
-      <rect width="9" height="2" fill="#fff"/>
-    </svg>
-  </a>
-</div>
-
+        <!-- BG -->
+        <a href="index.html" aria-label="Български">
+          <svg viewBox="0 0 9 6" width="28" height="18" aria-hidden="true">
+            <rect width="9" height="6" fill="#D62612"/>
+            <rect width="9" height="4" fill="#00966E"/>
+            <rect width="9" height="2" fill="#fff"/>
+          </svg>
+        </a>
+      </div>
     </div>
   </nav>
 
   <section class="hero">
     <div class="headline">
-      <img src="lod.png" alt="Логотип Lord of the Drinks">
+      <img src="lod.png" alt="Lord of the Drinks logo">
     </div>
   </section>
-   
 
   <section id="about">
-  <div class="about-block">
-    <img src="tanks.png" alt="Резервуары" class="about-img">
-    <div class="about-text">
-      <h2>О нас</h2>
-      <p>
-        Торговая марка <strong>«Lord I&amp;G»</strong> сделала свои первые шаги на рынке в 2000 году. 
-        Бренд был запущен небольшой семейной компанией, производящей крепкие алкогольные напитки. 
-        Владельцем и управляющим этой компании является <strong>Лилия Гюрова</strong>.  
-        В начале своего развития фирма выпускала несколько популярных напитков, таких как ракия, мастика и водка.
-      </p>
-    </div>
-  </div>
-
-  <div class="about-block reverse">
-    <img src="kompaniq.png" alt="Компания" class="about-img">
-    <div class="about-text">
-      <p>
-        Сегодня портфель марки охватывает практически все виды крепких алкогольных напитков.  
-        На протяжении лет компания инвестировала в оборудование и производственные мощности, 
-        чтобы улучшить технологию производства в соответствии с высокими требованиями ЕС, 
-        создавать новые продукты и развивать бренд <strong>«Lord I&amp;G»</strong>.
-      </p>
-    </div>
-  </div>
-
-  <div class="about-block">
-    <img src="sami.png" alt="Экип" class="about-img">
-    <div class="about-text">
-      <p>
-        Уже более 15 лет мы упорно работаем над улучшением вкуса и качества нашей продукции, 
-        а также над её современным внешним видом.  
-        Компания <strong>«Лорд Ай энд Джи България» ЕООД</strong> динамично и успешно развивается и более 10 лет 
-        присутствует на международных рынках с партнёрами из Франции, Литвы, Латвии, Беларуси и США.  
-        Интерес к нашим продуктам продолжает расти и со стороны других рынков и зарубежных клиентов.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-  <section id="products" class="products">
-    <h2>Наша продукция</h2>
-   <div class="slider">
-  <div class="slides">
-    <div class="product-item">
-      <img src="rakia1.png" alt="LOD Original 0,7">
-      <h3>Виноградная ракия 0,7 л</h3>
-      <a href="#detail1" class="btn-more">ПОДРОБНЕЕ</a>
-    </div>
-    <div class="product-item">
-      <img src="rakia2.png" alt="LOD Brandy 0,7 l">
-      <h3>Бренди 0,7 л</h3>
-      <a href="#detail2" class="btn-more">ПОДРОБНЕЕ</a>
-    </div>
-    <div class="product-item">
-      <img src="rakia3.png" alt="LOD Mastika 0,7 L">
-      <h3>Мастика 0,7 л</h3>
-      <a href="#detail3" class="btn-more">ПОДРОБНЕЕ</a>
-    </div>
-    <div class="product-item">
-      <img src="vodka.png" alt="LOD Vodka 0,7 L">
-      <h3>Водка 0,7 л</h3>
-      <a href="#detail4" class="btn-more">ПОДРОБНЕЕ</a>
+    <div class="about-block">
+      <img src="tanks.png" alt="Tanks" class="about-img">
+      <div class="about-text">
+        <h2>About us</h2>
+        <p>
+          The <strong>“Lord I&amp;G”</strong> brand took its first steps on the market in 2000,
+          launched by a small family company producing high-strength alcoholic beverages.
+          The owner and manager of this company is <strong>Lilia Gyurova</strong>.<br>
+          At the beginning the company started its production with several popular drinks
+          such as rakia, mastika and vodka.
+        </p>
+      </div>
     </div>
 
-    <div class="product-item">
-      <img src="gin.png" alt="LOD Gin 0,7 L">
-      <h3>Джин 0,7 л</h3>
-      <a href="#detail5" class="btn-more">ПОДРОБНЕЕ</a>
+    <div class="about-block reverse">
+      <img src="kompaniq.png" alt="Company" class="about-img">
+      <div class="about-text">
+        <p>
+          Today the portfolio covers almost all types of high-alcohol drinks.<br>
+          Over the years the company has invested in equipment and production capacity
+          in order to improve the production technology to meet the high requirements
+          of the EU, to create new products and to further develop the
+          <strong>“Lord I&amp;G”</strong> brand.
+        </p>
+      </div>
     </div>
 
-    <div class="product-item">
-      <img src="brandy12.png" alt="LOD Brandy 12 y.o. 0,7 L">
-      <h3>Бренди 12 лет, 0,7 л</h3>
-      <a href="#detail6" class="btn-more">ПОДРОБНЕЕ</a>
+    <div class="about-block">
+      <img src="sami.png" alt="Team" class="about-img">
+      <div class="about-text">
+        <p>
+          For more than 15 years we have been working hard to improve the taste and quality
+          of our products and their modern appearance.<br>
+          The company <strong>“Lord I&amp;G Bulgaria” Ltd.</strong> is developing dynamically
+          and successfully, and for more than 10 years has been present on international markets
+          with partners from France, Lithuania, Latvia, Belarus and the USA.<br>
+          Interest in our products continues to grow from other markets and foreign clients as well.
+        </p>
+      </div>
     </div>
-
-  </div>
-  <button class="prev">&#10094;</button><button class="next">&#10095;</button>
-  <div class="dots"></div>
-</div>
   </section>
 
-<div id="detail1" class="product-detail">
-  <img src="rakia1.png" alt="LOD Original 0,7">
-  <div class="desc">
-    <h3>Виноградная ракия 0,7 л</h3>
-    <p>
-      Следуя древним болгарским традициям, <strong>«Lord I&amp;G»</strong> предлагает в своём портфолио 
-      и традиционную болгарскую виноградную ракию.  
-      Произведённая по классической болгарской технологии, наша ракия отличается 
-      золотистым оттенком, мягкой структурой и изящным вкусом.
-    </p>
-  </div>
-</div>
+  <section id="products" class="products">
+    <h2>Our products</h2>
+    <div class="slider">
+      <div class="slides">
+        <div class="product-item">
+          <img src="rakia1.png" alt="LOD Original 0.7L">
+          <h3>Grape Rakia 0.7L</h3>
+          <a href="#detail1" class="btn-more">SEE MORE</a>
+        </div>
+        <div class="product-item">
+          <img src="rakia2.png" alt="LOD Brandy 0.7L">
+          <h3>Brandy 0.7L</h3>
+          <a href="#detail2" class="btn-more">SEE MORE</a>
+        </div>
+        <div class="product-item">
+          <img src="rakia3.png" alt="LOD Mastika 0.7L">
+          <h3>Mastika 0.7L</h3>
+          <a href="#detail3" class="btn-more">SEE MORE</a>
+        </div>
+        <div class="product-item">
+          <img src="vodka.png" alt="LOD Vodka 0.7L">
+          <h3>Vodka 0.7L</h3>
+          <a href="#detail4" class="btn-more">SEE MORE</a>
+        </div>
 
-<div id="detail2" class="product-detail reverse">
-  <img src="rakia2.png" alt="LOD Brandy 0,7 l">
-  <div class="desc">
-    <h3>Бренди 0,7 л</h3>
-    <p>
-      Сердце семейства <strong>«Lord I&amp;G»</strong> – это наше бренди.  
-      Элегантный и мягкий вкус этого янтарного напитка пробуждает самые тонкие ощущения.  
-      Бренди <strong>«Lord I&amp;G»</strong> дарит невероятное вкусовое переживание 
-      с нотами ванили, косточки вишни и миндаля.
-    </p>
-  </div>
-</div>
+        <div class="product-item">
+          <img src="gin.png" alt="LOD Gin 0.7L">
+          <h3>Gin 0.7L</h3>
+          <a href="#detail5" class="btn-more">SEE MORE</a>
+        </div>
 
+        <div class="product-item">
+          <img src="brandy12.png" alt="LOD Brandy 12 y.o. 0.7L">
+          <h3>Brandy 12 y.o. 0.7L</h3>
+          <a href="#detail6" class="btn-more">SEE MORE</a>
+        </div>
+      </div>
+      <button class="prev">&#10094;</button><button class="next">&#10095;</button>
+      <div class="dots"></div>
+    </div>
+  </section>
 
-<div id="detail3" class="product-detail">
-  <img src="rakia3.png" alt="LOD Mastika 0,7 L">
-  <div class="desc">
-    <h3>Мастика 0,7 л</h3>
-    <p>
-      Мастика <strong>«Lord I&amp;G»</strong> – это крепкий анисовый спиртной напиток 
-      с содержанием алкоголя 47°, полученный путём ароматизации этилового спирта 
-      сельскохозяйственного происхождения.  
-      Наша мастика имеет свежий, мягкий вкус с выраженным ароматом аниса.  
-      Подаётся сильно охлаждённой, на маленьких серебристых кристалликах льда.
-    </p>
+  <div id="detail1" class="product-detail">
+    <img src="rakia1.png" alt="LOD Original 0.7L">
+    <div class="desc">
+      <h3>Grape Rakia 0.7L</h3>
+      <p>
+        Following ancient Bulgarian traditions, <strong>“Lord I&amp;G”</strong> also offers
+        traditional Bulgarian grape rakia in its portfolio. Produced using a classic Bulgarian
+        technology, our rakia is distinguished by its golden colour, smooth structure
+        and refined taste.
+      </p>
+    </div>
   </div>
-</div>
 
-<div id="detail4" class="product-detail reverse">
-  <img src="vodka.png" alt="LOD Vodka 0,7 L">
-  <div class="desc">
-    <h3>Водка 0,7 л</h3>
-    <p>
-      Высокое качество водки <strong>«Lord I&amp;G»</strong> достигается благодаря использованию 
-      превосходного 100% зернового спирта и чистой горной воды 
-      из карстового источника на высоте более 1200 м над уровнем моря.  
-      Технология производства включает многоступенчатую дистилляцию 
-      и фильтрацию через активированный уголь, что гарантирует чистый, 
-      мягкий и свежий вкус нашего продукта.
-    </p>
+  <div id="detail2" class="product-detail reverse">
+    <img src="rakia2.png" alt="LOD Brandy 0.7L">
+    <div class="desc">
+      <h3>Brandy 0.7L</h3>
+      <p>
+        The heart of the <strong>“Lord I&amp;G”</strong> family is our brandy.
+        The elegant and smooth taste of this amber drink will awaken even the most
+        delicate senses. Brandy <strong>“Lord I&amp;G”</strong> offers an unforgettable
+        flavour experience with notes of vanilla, cherry stone and almond.
+      </p>
+    </div>
   </div>
-</div>
 
-<div id="detail5" class="product-detail">
-  <img src="gin.png" alt="LOD Gin 0,7 L">
-  <div class="desc">
-    <h3>Джин 0,7 л</h3>
-    <p>
-      Джин <strong>«Lord I&amp;G»</strong> производится из натурального дистиллята ягод можжевельника 
-      и 100% зернового спирта.  
-      Джин отличается исключительно мягким вкусом и глубоким ароматом 
-      и является прекрасным выбором для отдыха и релаксации.
-    </p>
+  <div id="detail3" class="product-detail">
+    <img src="rakia3.png" alt="LOD Mastika 0.7L">
+    <div class="desc">
+      <h3>Mastika 0.7L</h3>
+      <p>
+        Mastika <strong>“Lord I&amp;G”</strong> is a strong anise spirit with
+        47° alcohol content, produced by flavouring ethyl alcohol of agricultural origin.
+        Our mastika has a fresh, soft taste with a clear anise aroma.
+        It is served well chilled, over small silvery ice crystals.
+      </p>
+    </div>
   </div>
-</div>
 
-<div id="detail6" class="product-detail reverse">
-  <img src="brandy12.png" alt="LOD Brandy 12 y.o. 0,7 L">
-  <div class="desc">
-    <h3>Бренди 12 лет, 0,7 л</h3>
-    <p>
-      Бренди, выдержанное 12 лет в дубовых бочках – плотное, благородное 
-      и с длительным послевкусием.
-    </p>
+  <div id="detail4" class="product-detail reverse">
+    <img src="vodka.png" alt="LOD Vodka 0.7L">
+    <div class="desc">
+      <h3>Vodka 0.7L</h3>
+      <p>
+        The high quality of <strong>“Lord I&amp;G”</strong> vodka is achieved thanks to
+        the use of excellent 100% grain alcohol and pure mountain water from a karst spring
+        at over 1200 m above sea level. The production technology includes
+        multi-stage distillation and filtration through activated charcoal,
+        which guarantees the clean, smooth and fresh taste of our product.
+      </p>
+    </div>
   </div>
-</div>
+
+  <div id="detail5" class="product-detail">
+    <img src="gin.png" alt="LOD Gin 0.7L">
+    <div class="desc">
+      <h3>Gin 0.7L</h3>
+      <p>
+        Gin <strong>“Lord I&amp;G”</strong> is produced from a natural distillate
+        of juniper berries and 100% grain alcohol. The gin stands out with its
+        exceptionally smooth taste and deep aroma and is a wonderful choice
+        for relaxation and unwinding.
+      </p>
+    </div>
+  </div>
+
+  <div id="detail6" class="product-detail reverse">
+    <img src="brandy12.png" alt="LOD Brandy 12 y.o. 0.7L">
+    <div class="desc">
+      <h3>Brandy 12 y.o. 0.7L</h3>
+      <p>
+        Brandy aged for 12 years in oak barrels – full-bodied, noble,
+        with a long-lasting finish.
+      </p>
+    </div>
+  </div>
+
+  </div>
 
   <section id="contacts">
-    <h2>Контакты</h2>
+    <h2>Contacts</h2>
     <div class="contact-links">
       <a href="tel:+359888274414">+359 888 274 414</a>
     </div>
     <div class="contacts-icons">
       <a class="facebook" href="https://facebook.com" target="_blank" aria-label="Facebook">
-        <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99H7.9v-2.89h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78l-.44 2.89h-2.34v6.99C18.34 21.13 22 17 22 12z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 5 3.66 9.13 8.44 9.88v-6.99H7.9v-2.89h2.54V9.41c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.87h2.78л-.44 2.89h-2.34v6.99C18.34 21.13 22 17 22 12z"/></svg>
       </a>
-
       <a class="youtube" href="https://youtube.com" target="_blank" aria-label="YouTube">
-        <svg viewBox="0 0 24 24"><path d="M21.8 8.001s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16.2 4.9 12 4.9 12 4.9h-.1s-4.2 0-6.9.2c-.4 0-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.6c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.7.2 7 .2 7 .2s4.2 0 6.9-.2c.4 0 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.6c0-1.6-.2-3.2-.2-3.2zM10 14.7V9.3l5.2 2.7-5.2 2.7z"/></svg>
+        <svg viewBox="0 0 24 24"><path d="M21.8 8.001s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16.2 4.9 12 4.9 12 4.9h-.1s-4.2 0-6.9.2c-.4 0-1.3.1-2.1.9-.6.6-.8 2-.8 2S2 9.6 2 11.2v1.6c0 1.6.2 3.2.2 3.2s.2 1.4.8 2c.8.8 1.9.8 2.4.9 1.7.2 7 .2 7 .2s4.2 0 6.9-.2c.4 0 1.3-.1 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.2v-1.6c0-1.6-.2-3.2-.2-3.2zM10 14.7V9.3л5.2 2.7-5.2 2.7z"/></svg>
       </a>
-
       <a class="instagram" href="https://instagram.com" target="_blank" aria-label="Instagram">
         <svg viewBox="0 0 24 24"><path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 
         0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm0 2h10c1.654 0 3 1.346 
@@ -704,15 +700,14 @@
       <!-- Viber -->
       <a class="viber" href="viber://chat?number=%2B359888274414" target="_blank" aria-label="Viber">
         <svg viewBox="0 0 24 24">
-          <path d="M17.5 1h-11A5.5 5.5 0 0 0 1 6.5v11A5.5 5.5 0 0 0 6.5 23h11a5.5 5.5 0 0 0 5.5-5.5v-11A5.5 5.5 0 0 0 17.5 1Zm3.5 16.5a3.5 3.5 0 0 1-3.5 3.5h-11a3.5 3.5 0 0 1-3.5-3.5v-11A3.5 3.5 0 0 1 6.5 3h11a3.5 3.5 0 0 1 3.5 3.5v11ZM16.7 14c-.3-.1-1.8-.9-2-.9s-.3-.1-.5.2l-.7.9c-.1.1-.2.2-.4.1s-1-.4-2-1.3a9.4 9.4 0 0 1-1.6-2c-.1-.2 0-.3.1-.4l.5-.6c.2-.3.3-.4.4-.6.1-.2 0-.4 0-.5L10 7c-.1-.3-.3-.4-.5-.5H8.9c-.3 0-.7.1-1 .5-.3.3-1.2 1.3-1.2 3.2s1.2 3.7 1.4 4 .8 1.2 1.8 2.2 2.9 1.9 4.1 2.2c.5.2.9.2 1.2.3h.5c.3 0 1.1-.4 1.3-1 .2-.6.2-1.1.2-1.2s-.2-.1-.5-.3Z"/>
+          <path d="M17.5 1h-11A5.5 5.5 0 0 0 1 6.5v11A5.5 5.5 0 0 0 6.5 23h11a5.5 5.5 0 0 0 5.5-5.5v-11A5.5 5.5 0 0 0 17.5 1Zm3.5 16.5a3.5 3.5 0 0 1-3.5 3.5h-11a3.5 3.5 0 0 1-3.5-3.5v-11A3.5 3.5 0 0 1 6.5 3h11a3.5 3.5 0 0 1 3.5 3.5v11ZM16.7 14c-.3-.1-1.8-.9-2-.9s-.3-.1-.5.2л-.7.9c-.1.1-.2.2-.4.1s-1-.4-2-1.3a9.4 9.4 0 0 1-1.6-2c-.1-.2 0-.3.1-.4l.5-.6c.2-.3.3-.4.4-.6.1-.2 0-.4 0-.5L10 7c-.1-.3-.3-.4-.5-.5H8.9c-.3 0-.7.1-1 .5-.3.3-1.2 1.3-1.2 3.2s1.2 3.7 1.4 4 .8 1.2 1.8 2.2 2.9 1.9 4.1 2.2c.5.2.9.2 1.2.3h.5c.3 0 1.1-.4 1.3-1 .2-.6.2-1.1.2-1.2s-.2-.1-.5-.3Z"/>
         </svg>
       </a>
-
     </div>
   </section>
 
-  <a class="call-btn" href="tel:+359888274414" aria-label="Позвонить">
-    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V21a1 1 0 01-1 1C10.85 22 2 13.15 2 2a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02л-2.2 2.2z"/></svg>
+  <a class="call-btn" href="tel:+359888274414" aria-label="Call">
+    <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59л2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.57 3.57.57a1 1 0 011 1V21a1 1 0 01-1 1C10.85 22 2 13.15 2 2a1 1 0 011-1h3.5a1 1 0 011 1c0 1.24.2 2.45.57 3.57a1 1 0 01-.24 1.02л-2.2 2.2z"/></svg>
   </a>
 
   <script>
@@ -725,98 +720,98 @@
     showSlide(0);startAuto();
   </script>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const drawer = document.querySelector(".nav-links");
-  if (drawer) drawer.classList.add("show"); // отворено по подразбиране
-});
-</script>
-
-<script>
-(function(){
-  const KEY = "ageGateUntil"; // времеви ключ
-  const gate = document.getElementById("age-gate");
-  const yes  = document.getElementById("age-yes");
-  const no   = document.getElementById("age-no");
-
-  const validUntil = parseInt(localStorage.getItem(KEY) || "0", 10);
-  const expired = !validUntil || Date.now() > validUntil;
-
-  if (expired) {
-    gate.classList.add("show");
-    document.body.style.overflow = "hidden";
-  }
-
-  yes?.addEventListener("click", () => {
-    const TEN_MIN = 10 * 60 * 1000;
-    localStorage.setItem(KEY, String(Date.now() + TEN_MIN));
-    gate.classList.remove("show");
-    document.body.style.overflow = "";
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const drawer = document.querySelector(".nav-links");
+    if (drawer) drawer.classList.add("show");
   });
-
-  no?.addEventListener("click", () => {
-    window.close();
-  });
-})();
-</script>
-
-<script>
-document.addEventListener("scroll", () => {
-  document.querySelectorAll(".about-img").forEach(img => {
-    const rect = img.getBoundingClientRect();
-    if (rect.top < window.innerHeight - 100) {
-      img.classList.add("visible");
-    }
-  });
-});
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const bgFlag = document.querySelector('.lang-flags a[href="index.html"]');
-  const ruFlag = document.querySelector('.lang-flags a[href="index-ru.html"]');
-  const enFlag = document.querySelector('.lang-flags a[href="index-en.html"]');
-
-  const drawer = document.createElement('div');
-  drawer.className = 'lang-drawer';
-  drawer.appendChild(enFlag);
-  drawer.appendChild(ruFlag);
-  bgFlag.parentElement.appendChild(drawer);
-
-  bgFlag.addEventListener('click', e => {
-    e.preventDefault();
-    drawer.classList.toggle('show');
-  });
-});
-</script>
+  </script>
 
   <script>
-/* ДЕАКТИВИРАМЕ СЛАЙДЕРА И АВТОПЛЕЯ */
-document.addEventListener("DOMContentLoaded", () => {
-  const slides = document.querySelector(".slides");
+  (function(){
+    const KEY = "ageGateUntil";
+    const gate = document.getElementById("age-gate");
+    const yes  = document.getElementById("age-yes");
+    const no   = document.getElementById("age-no");
 
-  if (slides) {
-    slides.style.transform = "translateX(0)";
-    slides.style.transition = "none";
-  }
+    const validUntil = parseInt(localStorage.getItem(KEY) || "0", 10);
+    const expired = !validUntil || Date.now() > validUntil;
 
-  if (typeof auto !== "undefined") {
-    clearInterval(auto);
-  }
+    if (expired) {
+      gate.classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
 
-  const prev = document.querySelector(".prev");
-  const next = document.querySelector(".next");
-  if (prev) prev.style.display = "none";
-  if (next) next.style.display = "none";
+    yes?.addEventListener("click", () => {
+      const TEN_MIN = 10 * 60 * 1000;
+      localStorage.setItem(KEY, String(Date.now() + TEN_MIN));
+      gate.classList.remove("show");
+      document.body.style.overflow = "";
+    });
 
-  const dots = document.querySelector(".dots");
-  if (dots) dots.style.display = "none";
-});
-</script>
+    no?.addEventListener("click", () => {
+      window.close();
+    });
+  })();
+  </script>
 
-<footer class="webbadoo-credit">
-  © 2025 design by <a href="https://webbadoo.com" target="_blank"><strong>webbadoo</strong></a>
-</footer>
+  <script>
+  document.addEventListener("scroll", () => {
+    document.querySelectorAll(".about-img").forEach(img => {
+      const rect = img.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 100) {
+        img.classList.add("visible");
+      }
+    });
+  });
+  </script>
+
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const bgFlag = document.querySelector('.lang-flags a[href="index.html"]');
+    const ruFlag = document.querySelector('.lang-flags a[href="index-ru.html"]');
+    const enFlag = document.querySelector('.lang-flags a[href="index-en.html"]');
+
+    const drawer = document.createElement('div');
+    drawer.className = 'lang-drawer';
+    drawer.appendChild(enFlag);
+    drawer.appendChild(ruFlag);
+    bgFlag.parentElement.appendChild(drawer);
+
+    bgFlag.addEventListener('click', e => {
+      e.preventDefault();
+      drawer.classList.toggle('show');
+    });
+  });
+  </script>
+
+  <script>
+  /* Disable slider + autoplay */
+  document.addEventListener("DOMContentLoaded", () => {
+    const slides = document.querySelector(".slides");
+
+    if (slides) {
+      slides.style.transform = "translateX(0)";
+      slides.style.transition = "none";
+    }
+
+    if (typeof auto !== "undefined") {
+      clearInterval(auto);
+    }
+
+    const prev = document.querySelector(".prev");
+    const next = document.querySelector(".next");
+    if (prev) prev.style.display = "none";
+    if (next) next.style.display = "none";
+
+    const dots = document.querySelector(".dots");
+    if (dots) dots.style.display = "none";
+  });
+  </script>
+
+  <footer class="webbadoo-credit">
+    © 2025 design by <a href="https://webbadoo.com" target="_blank"><strong>webbadoo</strong></a>
+  </footer>
 
 </body>
 </html>
