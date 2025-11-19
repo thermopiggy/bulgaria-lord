@@ -363,6 +363,23 @@
   
 }
 
+    /* СКРИВА всички, освен втория продукт в слайдера */
+#products .product-item:not(:nth-child(2)) {
+    display: none !important;
+}
+
+/* СКРИВА всички detail секции, освен detail2 */
+.product-detail:not(#detail2) {
+    display: none !important;
+}
+
+/* СКРИВА стрелките и точките */
+.slider .prev,
+.slider .next,
+.dots {
+    display: none !important;
+}
+
 
   </style>
 </head>
