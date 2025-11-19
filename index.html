@@ -419,6 +419,24 @@
     filter: saturate(1);
 }
 
+.webbadoo-credit {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 9999;
+    opacity: 0.6;
+    font-size: 12px;
+}
+
+.webbadoo-credit a {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: inherit;
+}
+
+.webbadoo-credit:hover {
+    opacity: 1;
+}
 
 
   </style>
@@ -767,6 +785,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (dots) dots.style.display = "none";
 });
 </script>
+
+  <div class="webbadoo-credit">
+  <a href="https://webbadoo.com" target="_blank">© 2025 design by webbadoo</a>
+</div>
 
 </body>
 </html>
