@@ -427,16 +427,23 @@
     opacity: 0.6;
     font-size: 12px;
 }
+    
+.webbadoo-credit {
+  text-align: left;
+  padding: 20px;
+  font-size: 15px;
+  color: #bbb;
+}
 
 .webbadoo-credit a {
-    color: #ffffff;
-    text-decoration: none;
-    font-family: inherit;
+  color: #d4a017; /* златисто като менюто */
+  text-decoration: none;
 }
 
-.webbadoo-credit:hover {
-    opacity: 1;
+.webbadoo-credit a:hover {
+  color: #ffd76a;
 }
+
 
 
   </style>
@@ -785,10 +792,9 @@ document.addEventListener("DOMContentLoaded", () => {
   if (dots) dots.style.display = "none";
 });
 </script>
-
-  <div class="webbadoo-credit">
-  <a href="https://webbadoo.com" target="_blank">© 2025 design by webbadoo</a>
-</div>
+<footer class="webbadoo-credit">
+  © 2025 design by <a href="https://webbadoo.com" target="_blank"><strong>webbadoo</strong></a>
+</footer>
 
 </body>
 </html>
